@@ -65,4 +65,8 @@ syntax
 is not detected because the output of the `compiler` module is the same for
 both the old and the new syntax.
 
+**Quick fix**: In order to find illegal Python 3 syntax, you can use the following command to scan all .py files in a directory and check if the pattern occurs:
+
+    find ./my/source/dir -name '*.py' -exec echo -n "{} " \; | xargs egrep -H 'except [^(]+,'
+
 The `TODO` file has a few notes of things to do.
